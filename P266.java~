@@ -1,0 +1,22 @@
+import java.util.LinkedList; 
+public class P266 {
+    
+    public static void main(String[] args) { 
+        StdOut.println("Enter N: "); //enter 190
+        long N = StdIn.readLong(); 
+        
+        LinkedList<Integer> primes = new LinkedList<Integer>(); 
+        
+        for (int i = 2; i < N; i++) {
+            primes.add(i); 
+        }
+        
+        
+        for (int i = 2; i < N; i++) {
+            for (int j : primes) {
+                if (j % i == 0  && j != i) primes.remove(j);  
+            }
+        }
+        StdOut.println(); 
+    }   
+}
